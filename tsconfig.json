@@ -2,7 +2,7 @@
   "compilerOptions": {
     "module": "commonjs",
     "moduleResolution": "node",
-    "lib": ["es5", "es6", "dom"],
+    "lib": ["es2021", "dom"],
     "declaration": true,
     "noImplicitAny": true,
     "removeComments": false,
@@ -11,7 +11,7 @@
     "allowSyntheticDefaultImports": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "target": "es5",
+    "target": "es2021",
     "sourceMap": true,
     "outDir": "dist",
   },

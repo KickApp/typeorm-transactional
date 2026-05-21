@@ -21,3 +21,8 @@
 - Feature: add [Async Local Storage](https://nodejs.org/api/async_hooks.html#class-asynclocalstorage) support ([#39](https://github.com/Aliheym/typeorm-transactional/pull/39)).
 - Refactor: remove unnecessary patch ([#29](https://github.com/Aliheym/typeorm-transactional/pull/29)).
 - Refactor: improve the tests for all use cases.
+
+# 0.6.0
+
+- Chore: bump minimum supported Node.js version to `>=16.0.0` (aligns with `AsyncLocalStorage` GA support).
+- Chore: bump TypeScript compilation `target`/`lib` to `es2021`, emitting native `async`/`await` (and other ES2017+ syntax) instead of transpiled state machines for smaller and faster output.
