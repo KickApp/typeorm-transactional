@@ -2,7 +2,8 @@
 # Typeorm Transactional
 [![npm version](http://img.shields.io/npm/v/typeorm-transactional.svg?style=flat)](https://npmjs.org/package/typeorm-transactional "View this project on npm")
 
-## It's a fork of [typeorm-transactional-cls-hooked](https://github.com/odavid/typeorm-transactional-cls-hooked) for new versions of TypeORM.
+## It's a fork of
+[typeorm-transactional](https://github.com/Aliheym/typeorm-transactional) for native async/await support
 
 
 A `Transactional` Method Decorator for [typeorm](http://typeorm.io/) that uses [ALS](https://nodejs.org/api/async_context.html#class-asynclocalstorage) or [cls-hooked](https://www.npmjs.com/package/cls-hooked) to handle and propagate transactions between different repositories and service methods.
