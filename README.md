@@ -1,9 +1,8 @@
 
 # Typeorm Transactional
-[![npm version](http://img.shields.io/npm/v/typeorm-transactional.svg?style=flat)](https://npmjs.org/package/typeorm-transactional "View this project on npm")
+[![npm version](http://img.shields.io/npm/v/@kickfinance/typeorm-transactional.svg?style=flat)](https://npmjs.org/package/@kickfinance/typeorm-transactional "View this project on npm")
 
-## It's a fork of
-[typeorm-transactional](https://github.com/Aliheym/typeorm-transactional) for native async/await support
+## It's a fork of [typeorm-transactional](https://github.com/Aliheym/typeorm-transactional) for native async/await support
 
 
 A `Transactional` Method Decorator for [typeorm](http://typeorm.io/) that uses [ALS](https://nodejs.org/api/async_context.html#class-asynclocalstorage) or [cls-hooked](https://www.npmjs.com/package/cls-hooked) to handle and propagate transactions between different repositories and service methods.
@@ -36,7 +35,7 @@ See [Changelog](#CHANGELOG.md)
 
 ```shell
 ## npm
-npm install --save typeorm-transactional
+npm install --save @kickfinance/typeorm-transactional
 
 ## Needed dependencies
 npm install --save typeorm reflect-metadata
@@ -45,7 +44,7 @@ npm install --save typeorm reflect-metadata
 Or
 
 ```shell
-yarn add typeorm-transactional
+yarn add @kickfinance/typeorm-transactional
 
 ## Needed dependencies
 yarn add typeorm reflect-metadata
@@ -58,7 +57,7 @@ yarn add typeorm reflect-metadata
 In order to use it, you will first need to initialize the transactional context before your application is started
 
 ```typescript
-import { initializeTransactionalContext, StorageDriver } from 'typeorm-transactional';
+import { initializeTransactionalContext, StorageDriver } from '@kickfinance/typeorm-transactional';
 
 initializeTransactionalContext({ storageDriver: StorageDriver.AUTO });
 ...
@@ -79,7 +78,7 @@ To be able to use TypeORM entities in transactions, you must first add a DataSou
 
 ```typescript
 import { DataSource } from 'typeorm';
-import { initializeTransactionalContext, addTransactionalDataSource, StorageDriver } from 'typeorm-transactional';
+import { initializeTransactionalContext, addTransactionalDataSource, StorageDriver } from '@kickfinance/typeorm-transactional';
 ...
 const dataSource = new DataSource({
 	  type: 'postgres',
@@ -102,7 +101,7 @@ Example for `Nest.js`:
 // main.ts
 
 import { NestFactory } from '@nestjs/core';
-import { initializeTransactionalContext, StorageDriver } from 'typeorm-transactional';
+import { initializeTransactionalContext, StorageDriver } from '@kickfinance/typeorm-transactional';
 
 import { AppModule } from './app';
 
@@ -126,7 +125,7 @@ bootstrap();
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DataSource } from 'typeorm';
-import { addTransactionalDataSource } from 'typeorm-transactional';
+import { addTransactionalDataSource } from '@kickfinance/typeorm-transactional';
 
 @Module({
 	imports: [
@@ -288,7 +287,7 @@ export class PostService {
 This can be accomplished in Jest with:
 
 ```typescript
-jest.mock('typeorm-transactional', () => ({
+jest.mock('@kickfinance/typeorm-transactional', () => ({
   Transactional: () => () => ({}),
 }));
 ```
@@ -334,7 +333,7 @@ The possible variants:
 > ⚠️ **WARNING:**  Currently, we use `CLS_HOOKED` by default for backward compatibility. However, in the next major release, this default will be switched to `AUTO`.
 
 ```typescript
-import { StorageDriver } from 'typeorm-transactional'
+import { StorageDriver } from '@kickfinance/typeorm-transactional'
 
 initializeTransactionalContext({ storageDriver: StorageDriver.AUTO });
 ```
